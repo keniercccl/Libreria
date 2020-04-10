@@ -1,10 +1,15 @@
 import React from 'react';
 import './App.css';
+import Menu from './componets/Menu'
+// import List from './componets/List'
 
 function App() {
   return (
     <div className="app">
-      <h1> Primer Commit</h1>
+      <Menu 
+        tittle="Amozon"
+      />
+      {/* <List /> */}
     </div>
 
     // <div className="App">

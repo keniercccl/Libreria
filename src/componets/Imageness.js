@@ -1,11 +1,11 @@
 import React from 'react';
+import Vw_Logo from '../componets/Vw_Logo.png'
 
 const Imageness = () => {
     return (
         <div>
-            <img src="/../src/componets/Vw_Logo.png" alt="prueba2" />
+            <img src= {Vw_Logo} alt="prueba2" />
         </div>
     )
 }
-
 export default Imageness;

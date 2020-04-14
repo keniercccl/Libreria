@@ -1,37 +1,57 @@
 import React from 'react'
-import Imageness from '../componets/Imageness'
+import '../../src/Item.css'
 
-const Item = (props) => {
-    return (
-        <div className="item">
-            <div className="image">
-                <img scr={"../../blic/img/" + props.image} width="100%" alt={props.image}/>
-                <Imageness />
-            </div>
+class Item extends React.Component {
 
-            <div className="tit">
-                {props.title}
-            </div>
+    constructor(props){
+        super(props);
 
-            <div>
-                <p>
+        this.state = {
+            stars : []
+        }
+    }
 
-                </p>
-                Calificaciòn:
-                <select value={props.rating}>
-                    <option  value = "1"> 1 </option>
-                    <option  value = "2"> 2 </option>
-                    <option  value = "3"> 3 </option>
-                    <option  value = "4"> 4 </option>
-                    <option  value = "5"> 5 </option>
-                </select>
-            </div>
+    componentDidMount(){
+        this.setState({
+            stars : Array(parseInt(this.props.rating)).fill(0)
+        })
+    }
 
-            <div className="actions ">
-                <button>Eliminar</button>
-            </div>
-        </div>
-    )
-}
+    render(){
+            return (
+                <div className="item">
+                    <div className="image">
+                        <img scr={'../img' + this.props.image} width="100%" alt={this.props.image}/>
+                    </div>
 
+                    <div className="tit">
+                        {this.props.title}
+                    </div>
+
+                    <div>
+                        <p>
+                            {
+                                this.state.stars.map( x =>
+                                    <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Kvinpinta_flava_stelo_255-255-0.svg/1076px-Kvinpinta_flava_stelo_255-255-0.svg.png"
+                                     width="25" />
+                                )
+                            }
+                        </p>
+                        Calificaciòn:
+                        <select value={this.props.rating}>
+                            <option  value = "1"> 1 </option>
+                            <option  value = "2"> 2 </option>
+                            <option  value = "3"> 3 </option>
+                            <option  value = "4"> 4 </option>
+                            <option  value = "5"> 5 </option>
+                        </select>
+                    </div>
+
+                    <div className="actions ">
+                        <button>Eliminar</button>
+                    </div>
+                </div>
+            )
+        }
+    }
 export default Item;

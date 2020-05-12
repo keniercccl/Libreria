@@ -21,24 +21,26 @@ class Item extends React.Component {
             return (
                 <div className="item">
                     <div className="image">
-                        <img scr={'../img' + this.props.image} width="100%" alt={this.props.image}/>
+                        <img scr={"../img/" + this.image} width="100%" alt={this.image}/>
                     </div>
-
-                    <div className="tit">
-                        {this.props.title}
+                    <div className="title">
+                        {this.title}
                     </div>
 
                     <div>
                         <p>
-                            {
+                            { 
                                 this.state.stars.map( x =>
+                                    
                                     <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Kvinpinta_flava_stelo_255-255-0.svg/1076px-Kvinpinta_flava_stelo_255-255-0.svg.png"
-                                     width="25" />
+                                     width="25" 
+                                     alt="start-wiki"
+                                     />
                                 )
                             }
                         </p>
                         Calificaciòn:
-                        <select value={this.props.rating}>
+                        <select value={this.rating}>
                             <option  value = "1"> 1 </option>
                             <option  value = "2"> 2 </option>
                             <option  value = "3"> 3 </option>

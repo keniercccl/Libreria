@@ -1,7 +1,7 @@
 import React from 'react'
 import Search from './Search'
 import PanelAdd from './PanelAdd'
-import '../Menu.css'
+import '../styles/Menu.css'
 
 class Menu extends React.Component{
 
@@ -40,7 +40,7 @@ class Menu extends React.Component{
                     <button 
                     onClick = {this.add}
                     className="button btn-blue">
-                    + Añadir nuevo libro
+                    Añadir nuevo libro
                     </button>
                 </div>
             </div>

@@ -1,7 +1,7 @@
 import React from 'react'
 import Item from '../componets/Item'
 
-const List = (props) => {
+const List = props => {
     return (
         <div className="list">
             {

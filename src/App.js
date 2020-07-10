@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './styles/App.css';
 import Menu from './componets/Menu'
 import List from './componets/List'
 // import { render } from '@testing-library/react';

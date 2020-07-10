@@ -5,7 +5,6 @@ const Search = () => {
     return (
         <div>
             <input type="text" placeholder="Busca un Libro"/>
-            <div><h1>Prueba</h1></div>
 
         </div>
     )

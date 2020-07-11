@@ -6,16 +6,15 @@ import List from './componets/List'
 // import List from './componets/List'
 
 class App extends React.Component {
-
-
+   
     constructor (props){
       super(props);
       this.state ={
         books : [
           {id:0, rating: 4, title: 'Harry Potter y el càliz de fuego', image: 'libro01.jpg'},
-          {id:1, rating: 3, title: 'The Shinnig', image: 'libro02.jpg'},
+          {id:1, rating: 1, title: 'The Shinnig', image: 'libro02.jpg'},
           {id:2, rating: 2, title: 'Còdigo Da Vinci', image: 'libro03.jpg'},
-          {id:3, rating: 5, title: 'El Principito', image: 'libro04.jpg'},
+          {id:3, rating: 1, title: 'El Principito', image: 'libro04.jpg'},
           {id:4, rating: 1, title: 'Sobrenatural', image: 'libro05.jpg'}
         ]
       }
@@ -28,8 +27,6 @@ class App extends React.Component {
       temp.push(item);
 
       this.setState({books : [...temp]})
-      console.log(item);
-
     }
 
     render(){

@@ -13,11 +13,9 @@ class Item extends React.Component {
 
     componentDidMount(){
         this.setState({
-            stars : Array(parseInt(this.props.rating)).fill(0)
+            stars : Array(parseInt(this.props.rating)).fill(1)
         })
     }
-
-    
 
     render(){
             return (
@@ -27,14 +25,14 @@ class Item extends React.Component {
                         <img scr= {"../img/" + this.props.image}  width="100%" alt={this.image}/>
                     </div>
                     <div className="title">
-                        {this.title}
+                        {this.props.title}
                     </div>
 
                     <div>
                         <p>
                             { 
                                 this.state.stars.map( x =>
-                                    <img id= "img123"
+                                    <img
                                     src = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Kvinpinta_flava_stelo_255-255-0.svg/1076px-Kvinpinta_flava_stelo_255-255-0.svg.png"
                                      width="25" 
                                      alt="star-wiki"

@@ -21,9 +21,8 @@ class Menu extends React.Component{
 
         //Revisar los bind que estan en el this.state porque sin ellos no se usa funciòn flecha
     onCancel = (e) => { 
-        
         this.setState({newItemPanel:false});
-        console.log("se cancela");
+
     }
 
     render() {
@@ -53,7 +52,7 @@ class Menu extends React.Component{
                     onAdd = {this.props.onAdd}
                 />
                 :
-                'prueba'
+                ''
             }
         </div>
     )

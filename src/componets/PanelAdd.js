@@ -25,7 +25,7 @@ class PanelAdd extends React.Component{
     }
 
     onSubmit = (e) => {
-        e.preventDefault();
+ 
         const title = this.state.title;
         const image = this.state.image;
         const rating = this.state.rating;
@@ -33,7 +33,6 @@ class PanelAdd extends React.Component{
         this.props.onAdd({title : title, image : image, rating : rating})
         this.props.onCancel(); 
 
-        console.log("aqui pasa algo")
     }
 
     render(){ 

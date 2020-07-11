@@ -24,8 +24,15 @@ class PanelAdd extends React.Component{
         this.setState({rating : rating});
     }
 
-    onSubmit(e){
+    onSubmit = (e) => {
         e.preventDefault();
+        const title = this.state.title;
+        const image = this.state.image;
+        const rating = this.state.rating;
+
+        this.props.onAdd({title : title, image : image, rating : rating})
+        this.props.onCancel(); 
+
         console.log("aqui pasa algo")
     }
 
@@ -33,15 +40,15 @@ class PanelAdd extends React.Component{
         return (
             <div className="new-item-panel-container">
                 <div className="new-item-panel">
-                    <form >
+                    <form onSubmit={this.onSubmit}>
                         <p>
                             <label>Titulo del Libro</label> <br/>
-                            <input onChange = {this.onChageTitle} type="text" name="title" className="imput" />
+                            <input onChange = {this.onChageTitle} type="text"  className="imput" />
                         </p>
 
                         <p>
                             <label>Nombre de Imagen</label> <br/>
-                            <input onChange = {this.onChageImage} type="text" name="image" className="imput" />
+                            <input onChange = {this.onChageImage} type="text" className="imput" />
                         </p>
 
                         <p>

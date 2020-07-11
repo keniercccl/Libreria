@@ -9,7 +9,7 @@ class Item extends React.Component {
         this.state = {
             stars : []
         }
-    }
+    } 
 
     componentDidMount(){
         this.setState({
@@ -17,11 +17,14 @@ class Item extends React.Component {
         })
     }
 
+    
+
     render(){
             return (
                 <div className="item">
                     <div className="image">
-                        <img scr={"../img/" + this.image} width="100%" alt={this.image}/>
+                        
+                        <img scr= {"../img/" + this.props.image}  width="100%" alt={this.image}/>
                     </div>
                     <div className="title">
                         {this.title}
@@ -31,15 +34,17 @@ class Item extends React.Component {
                         <p>
                             { 
                                 this.state.stars.map( x =>
-                                    
-                                    <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Kvinpinta_flava_stelo_255-255-0.svg/1076px-Kvinpinta_flava_stelo_255-255-0.svg.png"
+                                    <img id= "img123"
+                                    src = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Kvinpinta_flava_stelo_255-255-0.svg/1076px-Kvinpinta_flava_stelo_255-255-0.svg.png"
                                      width="25" 
-                                     alt="start-wiki"
+                                     alt="star-wiki"
                                      />
                                 )
                             }
                         </p>
-                        Calificaciòn:
+
+                        <p>
+                        <label>Calificaciòn:</label><br />
                         <select value={this.rating}>
                             <option  value = "1"> 1 </option>
                             <option  value = "2"> 2 </option>
@@ -47,6 +52,8 @@ class Item extends React.Component {
                             <option  value = "4"> 4 </option>
                             <option  value = "5"> 5 </option>
                         </select>
+                        </p>
+
                     </div>
 
                     <div className="actions ">

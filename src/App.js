@@ -7,6 +7,7 @@ import List from './componets/List'
 
 class App extends React.Component {
 
+
     constructor (props){
       super(props);
       this.state ={
@@ -15,9 +16,20 @@ class App extends React.Component {
           {id:1, rating: 3, title: 'The Shinnig', image: 'libro02.jpg'},
           {id:2, rating: 2, title: 'Còdigo Da Vinci', image: 'libro03.jpg'},
           {id:3, rating: 5, title: 'El Principito', image: 'libro04.jpg'},
-          {id:4, rating: 5, title: 'Sobrenatural', image: 'libro05.jpg'}
+          {id:4, rating: 1, title: 'Sobrenatural', image: 'libro05.jpg'}
         ]
       }
+    }
+
+    onAdd = (item) => {
+      let temp = [...this.state.books];
+      const id = temp[temp.length-1].id++;
+      item['id'] = id;
+      temp.push(item);
+
+      this.setState({books : [...temp]})
+      console.log(item);
+
     }
 
     render(){
@@ -25,6 +37,7 @@ class App extends React.Component {
         <div className="app">
           <Menu 
             tittle="Amozon"
+            onAdd = {this.onAdd}
           />
           <List 
             items={this.state.books}

@@ -12,14 +12,16 @@ class Menu extends React.Component{
         this.add = this.add.bind(this);
         this.onCancel = this.onCancel.bind(this)
     }
-
-    add(){
+      
+        //Revisar los bind que estan en el this.state porque sin ellos no se usa funciòn flecha
+    add = () => {
         this.setState({newItemPanel:true});
-        console.log('un mensajeito');
+        //console.log('un mensajito del boton agregar');
     }
 
-    onCancel(e){
-        e.preventDefault();
+        //Revisar los bind que estan en el this.state porque sin ellos no se usa funciòn flecha
+    onCancel = (e) => { 
+        
         this.setState({newItemPanel:false});
         console.log("se cancela");
     }
@@ -48,9 +50,10 @@ class Menu extends React.Component{
                 (this.state.newItemPanel) ?
                 <PanelAdd 
                     onCancel = {this.onCancel}
+                    onAdd = {this.props.onAdd}
                 />
                 :
-                ''
+                'prueba'
             }
         </div>
     )

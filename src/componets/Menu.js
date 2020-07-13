@@ -33,7 +33,9 @@ class Menu extends React.Component{
                 </div>
 
                 <div className="search">
-                    <Search/>
+                    <Search
+                    onSearch = {this.props.onSearch}
+                    />
                 </div>
 
                 <div className="actions">

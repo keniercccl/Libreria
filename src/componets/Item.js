@@ -7,14 +7,41 @@ class Item extends React.Component {
         super(props);
 
         this.state = {
+            title : '',
+            image : '',
+            rating : 1,
             stars : []
         }
     } 
 
     componentDidMount(){
         this.setState({
-            stars : Array(parseInt(this.props.rating)).fill(1)
-        })
+            id : this.props.id,
+            title : this.props.title,
+            image : this.props.image,
+            rating : parseInt(this.props.rating),
+            // stars : Array(parseInt(this.props.rating)).fill(0)
+        });
+    }
+
+    onChangeRating = e => {
+        const rating = parseInt(e.target.value);
+        this.setState({
+
+            rating : parseInt(e.target.value),
+            stars : Array(parseInt(e.target.value)).fill(0)
+        });
+
+        this.props.onUpdateRating({
+            id : this.state.id,
+            title : this.state.title, 
+            image :this.state.image,
+            rating : this.state.rating
+        });
+    } 
+
+    onRemove = e => {
+        this.props.onRemove(this.props.id);
     }
 
     render(){
@@ -22,7 +49,7 @@ class Item extends React.Component {
                 <div className="item">
                     <div className="image">
                         
-                        <img scr= {"../img/" + this.props.image}  width="100%" alt={this.image}/>
+                        <img scr= "https://upload.wikimedia.org/wikipedia/commons/c/c8/Black_Star.svg" width="100%" alt={this.image}/>
                     </div>
                     <div className="title">
                         {this.props.title}
@@ -33,7 +60,7 @@ class Item extends React.Component {
                             { 
                                 this.state.stars.map( x =>
                                     <img
-                                    src = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Kvinpinta_flava_stelo_255-255-0.svg/1076px-Kvinpinta_flava_stelo_255-255-0.svg.png"
+                                    src = "https://upload.wikimedia.org/wikipedia/commons/c/c8/Black_Star.svg"
                                      width="25" 
                                      alt="star-wiki"
                                      />
@@ -43,7 +70,8 @@ class Item extends React.Component {
 
                         <p>
                         <label>Calificaciòn:</label><br />
-                        <select value={this.rating}>
+                        <select value={this.state.rating}
+                        onChange = {this.onChangeRating}>
                             <option  value = "1"> 1 </option>
                             <option  value = "2"> 2 </option>
                             <option  value = "3"> 3 </option>
@@ -55,7 +83,7 @@ class Item extends React.Component {
                     </div>
 
                     <div className="actions ">
-                        <button>Eliminar</button>
+                        <button onClick = {this.onRemove} >Eliminar</button>
                     </div>
                 </div>
             )

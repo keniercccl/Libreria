@@ -7,9 +7,9 @@ class PanelAdd extends React.Component{
         this.state = {
             title : '',
             image : '',
-            rating : 1
+            rating : ''
         };
-    }
+    } 
 
     onChageTitle = (e) =>{
         this.setState({title : e.target.value});
@@ -42,12 +42,18 @@ class PanelAdd extends React.Component{
                     <form onSubmit={this.onSubmit}>
                         <p>
                             <label>Titulo del Libro</label> <br/>
-                            <input onChange = {this.onChageTitle} type="text"  className="imput" />
+
+                            <input onChange = {this.onChageTitle}
+                            type="text" 
+                            className="imput" />
                         </p>
 
                         <p>
                             <label>Nombre de Imagen</label> <br/>
-                            <input onChange = {this.onChageImage} type="text" className="imput" />
+                            
+                            <input onChange = {this.onChageImage}
+                            type="text" 
+                            className="imput" />
                         </p>
 
                         <p>

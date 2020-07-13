@@ -14,15 +14,14 @@ class Menu extends React.Component{
     }
       
         //Revisar los bind que estan en el this.state porque sin ellos no se usa funciòn flecha
-    add = () => {
+    add ()  {
         this.setState({newItemPanel:true});
         //console.log('un mensajito del boton agregar');
     }
 
         //Revisar los bind que estan en el this.state porque sin ellos no se usa funciòn flecha
-    onCancel = (e) => { 
+    onCancel (e) { 
         this.setState({newItemPanel:false});
-
     }
 
     render() {
